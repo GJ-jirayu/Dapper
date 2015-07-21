@@ -1,0 +1,1094 @@
+<Schema name="Sales Analysis Percent" description="2014-12-18 versionEditByFai">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Brand ID">
+    <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+      <Table name="dim_branch">
+      </Table>
+      <Level name="Brand ID" visible="true" column="brand_id" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Branch">
+    <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+      <Table name="dim_branch">
+      </Table>
+      <Level name="Branch Short Name" visible="true" column="branch_short_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Branch Name" visible="true" column="branch_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Department">
+    <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+      <Table name="dim_branch">
+      </Table>
+      <Level name="Department Name" visible="true" column="department_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Branch Group">
+    <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+      <Table name="dim_branch">
+      </Table>
+      <Level name="Branch Group Name" visible="true" column="branch_group_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Distribution Group">
+    <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+      <Table name="dim_branch">
+      </Table>
+      <Level name="Distribution Group Name" visible="true" column="distribution_group_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Region">
+    <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+      <Table name="dim_branch">
+      </Table>
+      <Level name="Region Name" visible="true" column="region_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Channel">
+    <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+      <Table name="dim_branch">
+      </Table>
+      <Level name="Channel DGA Name" visible="true" column="channel_dga_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Goods Type">
+    <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+      <Table name="dim_branch">
+      </Table>
+      <Level name="Goods_type" visible="true" column="goods_type" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Sub Goods Type">
+    <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+      <Table name="dim_branch">
+      </Table>
+      <Level name="Sub_Goods_Type" visible="true" column="sub_goods_type" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Year">
+    <Hierarchy visible="true" hasAll="true" primaryKey="date_key">
+      <Table name="dim_date">
+      </Table>
+      <Level name="Calendar Year" visible="true" column="calendar_year" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+      </Level>
+      <Level name="Calendar Quarter" visible="true" column="calendar_quarter" type="String" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+      </Level>
+      <Level name="Calendar Month" visible="true" column="calendar_month_name" ordinalColumn="calendar_month_no" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      </Level>
+      <Level name="Calendar Date " visible="true" column="calendar_date" type="Date" uniqueMembers="true" levelType="TimeDays" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Member">
+    <Hierarchy visible="true" hasAll="true" primaryKey="member_key">
+      <Table name="dim_member">
+      </Table>
+      <Level name="Member Name" visible="true" column="member_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Property name="Member ID" column="member_id" type="Integer">
+        </Property>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Member Type">
+    <Hierarchy visible="true" hasAll="true" primaryKey="member_key">
+      <Table name="dim_member">
+      </Table>
+      <Level name="Member Type Name" visible="true" column="member_type_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Sales Type Group In Dim Sales Type Group">
+    <Hierarchy visible="true" hasAll="true" primaryKey="sales_type_group_key">
+      <Table name="dim_sales_type_group">
+      </Table>
+      <Level name="Sales Type Group Name" visible="true" column="sales_type_group_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Sales Type Group In Dim Sales Type">
+    <Hierarchy visible="true" hasAll="true" primaryKey="sales_type_key">
+      <Table name="dim_sales_type">
+      </Table>
+      <Level name="Sales type Group Name" visible="true" column="sales_type_group_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Sales Type">
+    <Hierarchy visible="true" hasAll="true" primaryKey="sales_type_key">
+      <Table name="dim_sales_type">
+      </Table>
+      <Level name="Sales Type Name" visible="true" column="sales_type_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Promotion">
+    <Hierarchy visible="true" hasAll="true" primaryKey="promotion_key">
+      <Table name="dim_promotion">
+      </Table>
+      <Level name="Promotion Name" visible="true" column="promotion_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Property name="Promotion Code" column="promotion_code" type="String">
+        </Property>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Product">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Full Product Code" visible="true" column="full_product_code" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Product Code" visible="true" column="product_code" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Product Type">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Product Type Name" visible="true" column="product_type_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Product Classification">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Product Classification Name" visible="true" column="product_classification_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Product Sub Classification">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Product Sub Classification Name" visible="true" column="product_sub_classification_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Product Brand">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Brand Name" visible="true" column="brand_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Property name="Brand Id" column="brand_id" type="Integer">
+        </Property>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Mood">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Mood Name" visible="true" column="mood_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Style">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Style Name" visible="true" column="style_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Color">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Color Name" visible="true" column="color_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Property name="Color Code" column="color_code" type="String">
+        </Property>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Size">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Size Name" visible="true" column="size_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Serial">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Serial No" visible="true" column="serial_no" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Additional">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Additional Code" visible="true" column="additional_code" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Tag">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Tag Label" visible="true" column="tag_label" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Production Year">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Production Year" visible="true" column="production_month" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Product Source">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_source_key">
+      <Table name="dim_product_source">
+      </Table>
+      <Level name="Product Source" visible="true" column="product_source_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Unit Cost I">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Unit Cost I" visible="true" column="cost_1" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Unit Cost II">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Unit Cost II" visible="true" column="cost_2" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Retail Price">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Retail Price" visible="true" column="retail_price" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Retail Price + VAT">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Retail Price + VAT" visible="true" column="retail_price_vat" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Selling Price">
+    <Hierarchy visible="true" hasAll="true" primaryKey="product_key">
+      <Table name="dim_product">
+      </Table>
+      <Level name="Selling Price" visible="true" column="selling_price" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="Sales" visible="true" cache="false" enabled="true">
+    <Table name="fact_sales">
+      <AggName name="agg_cube_sales" ignorecase="true">
+        <AggFactCount column="fact_sales_fact_count">
+        </AggFactCount>
+        <AggMeasure column="fact_sales_Sales_QTY" name="[Measures].[Sales QTY]">
+        </AggMeasure>
+        <AggMeasure column="fact_sales_Gross_Sales_Amount" name="[Measures].[Gross Sales Amount]">
+        </AggMeasure>
+        <AggMeasure column="fact_sales_Discount_Amount" name="[Measures].[Discount Amount]">
+        </AggMeasure>
+        <AggMeasure column="fact_sales_Net_Sales_Amount" name="[Measures].[Net Sales Amount]">
+        </AggMeasure>
+        <AggLevel column="dim_sales_type_Sales_type_Grou" name="[Sales Type Group In Dim Sales Type].[Sales type Group Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Full_Product_Code" name="[Product].[Full Product Code]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Product_Type_Name" name="[Product Type].[Product Type Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Product_Classifica" name="[Product Classification].[Product Classification Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Product_Sub_Classi" name="[Product Sub Classification].[Product Sub Classification Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Brand_Name" name="[Product Brand].[Brand Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Mood_Name" name="[Mood].[Mood Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Style_Name" name="[Style].[Style Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="agg_cube_sales-&#62;agg_cube_sales-&#62;dim_product_Color_Name - VARCHAR(100)" name="[Color].[Color Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Size_Name" name="[Size].[Size Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Serial_No" name="[Serial].[Serial No]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Additional_Code" name="[Additional].[Additional Code]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Tag_Label" name="[Tag].[Tag Label]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Production_Year" name="[Production Year].[Production Year]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_member_Member_Name" name="[Member].[Member Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_member_Member_Type_Name" name="[Member Type].[Member Type Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_promotion_Promotion_Name" name="[Promotion].[Promotion Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_source_Product_Sou" name="[Product Source].[Product Source]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Unit_Cost_I" name="[Unit Cost I].[Unit Cost I]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Unit_Cost_II" name="[Unit Cost II].[Unit Cost II]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Retail_Price" name="[Retail Price].[Retail Price]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Retail_Price_+_VAT" name="[Retail Price + VAT].[Retail Price + VAT]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_product_Selling_Price" name="[Selling Price].[Selling Price]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_branch_Department_Name" name="[Department].[Department Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_branch_Branch_Group_Name" name="[Branch Group].[Branch Group Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_branch_Distribution_Group_" name="[Distribution Group].[Distribution Group Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_branch_Region_Name" name="[Region].[Region Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_branch_Channel_DGA_Name" name="[Channel].[Channel DGA Name]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_branch_Goods_type" name="[Goods Type].[Goods_type]" collapsed="true">
+        </AggLevel>
+        <AggLevel column="dim_branch_Sub_Goods_Type" name="[Sub Goods Type].[Sub_Goods_Type]" collapsed="true">
+        </AggLevel>
+      </AggName>
+    </Table>
+    <DimensionUsage source="Year" name="Year" visible="true" foreignKey="date_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Sales Type Group In Dim Sales Type" name="Sales Type Group In Dim Sales Type" visible="true" foreignKey="sales_type_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product" name="Product" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Type" name="Product Type" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Classification" name="Product Classification" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Sub Classification" name="Product Sub Classification" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Brand" name="Product Brand" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Mood" name="Mood" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Style" name="Style" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Color" name="Color" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Size" name="Size" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Serial" name="Serial" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Additional" name="Additional" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Tag" name="Tag" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Production Year" name="Production Year" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Member" name="Member" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Member Type" name="Member Type" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Promotion" name="Promotion" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <Dimension type="StandardDimension" visible="true" foreignKey="invoice_no" highCardinality="false" name="Invoice No">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="fact_sales">
+          <AggName name="Agg_Cube_Sales" ignorecase="true">
+            <AggFactCount column="fact_sales_fact_count">
+            </AggFactCount>
+            <AggMeasure column="fact_sales_Sales_QTY" name="[Measures].[Sales QTY]">
+            </AggMeasure>
+            <AggMeasure column="fact_sales_Gross_Sales_Amount" name="[Measures].[Gross Sales Amount]">
+            </AggMeasure>
+            <AggMeasure column="fact_sales_Discount_Amount" name="[Measures].[Discount Amount]">
+            </AggMeasure>
+            <AggMeasure column="fact_sales_Net_Sales_Amount" name="[Measures].[Net Sales Amount]">
+            </AggMeasure>
+            <AggLevel column="dim_sales_type_Sales_type_Grou" name="[Sales Type Group In Dim Sales Type].[Sales type Group Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Full_Product_Code" name="[Product].[Full Product Code]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Product_Type_Name" name="[Product Type].[Product Type Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Product_Classifica" name="[Product Classification].[Product Classification Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Product_Sub_Classi" name="[Product Sub Classification].[Product Sub Classification Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Brand_Name" name="[Product Brand].[Brand Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Mood_Name" name="[Mood].[Mood Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Style_Name" name="[Style].[Style Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Color_Name" name="[Color].[Color Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Size_Name" name="[Size].[Size Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Serial_No" name="[Serial].[Serial No]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Additional_Code" name="[Additional].[Additional Code]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Tag_Label" name="[Tag].[Tag Label]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Production_Year" name="[Production Year].[Production Year]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_member_Member_Name" name="[Member].[Member Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_member_Member_Type_Name" name="[Member Type].[Member Type Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_promotion_Promotion_Name" name="[Promotion].[Promotion Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_source_Product_Sou" name="[Product Source].[Product Source]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Unit_Cost_I" name="[Unit Cost I].[Unit Cost I]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Unit_Cost_II" name="[Unit Cost II].[Unit Cost II]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Retail_Price" name="[Retail Price].[Retail Price]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_Retail_Price_+_VAT" name="[Retail Price + VAT].[Retail Price + VAT]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_product_New_Level_0" name="[Selling Price].[New Level 0]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_branch_Department_Name" name="[Department].[Department Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_branch_Branch_Group_Name" name="[Branch Group].[Branch Group Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_branch_Distribution_Group_" name="[Distribution Group].[Distribution Group Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_branch_Region_Name" name="[Region].[Region Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_branch_Channel_DGA_Name" name="[Channel].[Channel DGA Name]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_branch_Goods_type" name="[Goods Type].[Goods_type]" collapsed="true">
+            </AggLevel>
+            <AggLevel column="dim_branch_Sub_Goods_Type" name="[Sub Goods Type].[Sub_Goods_Type]" collapsed="true">
+            </AggLevel>
+          </AggName>
+        </Table>
+        <Level name="Invoice No" visible="true" column="invoice_no" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <DimensionUsage source="Product Source" name="Product Source" visible="true" foreignKey="product_source_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Unit Cost I" name="Unit Cost I" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Unit Cost II" name="Unit Cost II" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price" name="Retail Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price + VAT" name="Retail Price + VAT" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Selling Price" name="Selling Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Branch" name="Branch" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Department" name="Department" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Branch Group" name="Branch Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Distribution Group" name="Distribution Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Region" name="Region" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Channel" name="Channel" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Goods Type" name="Goods Type" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Sub Goods Type" name="Sub Goods Type" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Sales QTY" column="sales_qty" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Gross Sales Amount" column="sales_amount" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Discount Amount" column="discount_amount" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Net Sales Amount" column="net_sales_amount" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <CalculatedMember name="Sales Price" formatString="#,###.##" formula="([Measures].[Gross Sales Amount])/([Measures].[Sales Qty])" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+  <Cube name="Sales VS Target" visible="true" cache="true" enabled="true">
+    <Table name="fact_sales_vs_target">
+    </Table>
+    <DimensionUsage source="Branch" name="Branch" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Department" name="Department" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Branch Group" name="Branch Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Distribution Group" name="Distribution Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Region" name="Region" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Channel" name="Channel" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Goods Type" name="Goods Type" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Sub Goods Type" name="Sub Goods Type" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Year" name="Year" visible="true" foreignKey="month_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Sales Type Group In Dim Sales Type Group" name="Sales Type Group In Dim Sales Type Group" visible="true" foreignKey="sales_type_group_key" highCardinality="false">
+    </DimensionUsage>
+    <Dimension type="StandardDimension" visible="true" foreignKey="branch_key" highCardinality="false" name="Product Brand">
+      <Hierarchy visible="true" hasAll="true" primaryKey="branch_key">
+        <Table name="dim_branch">
+        </Table>
+        <Level name="Brand Name" visible="true" column="brand_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Net Sales Target Amount" column="net_sales_target_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Net Sales Amount" column="net_sales_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Gross Sales Target Amount" column="gross_sales_target_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Gross Sales Amount" column="gross_sales_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <CalculatedMember name="%Achieve (Net Sales)" formatString="Percent" formula="[Measures].[Net Sales Amount] / [Measures].[Net Sales Target Amount]" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD Net Sales Target Amount" formula="sum(ytd([Year].CurrentMember),[Measures].[Net Sales Target Amount])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD Net Sales Amount" formula="sum(ytd([Year].CurrentMember),[Measures].[Net Sales Amount])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD %Achieve (Net Sales)" formatString="Percent" formula="[Measures].[YTD Net Sales Amount] / [Measures].[YTD Net Sales Target Amount]" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="%Achieve (Gross)" formatString="Percent" formula="[Measures].[Gross Sales Amount] / [Measures].[Gross Sales Target Amount]" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD Gross Sales Target Amount" formula="sum(ytd([Year].CurrentMember),[Measures].[Gross Sales Target Amount])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD Gross Sales Amount" formula="sum(ytd([Year].CurrentMember),[Measures].[Gross Sales Amount])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD %Achieve (Gross Sales)" formula="[Measures].[YTD Gross Sales Amount] / [Measures].[YTD Gross Sales Target Amount]" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+  <Cube name="Sales Delivery to Branch" visible="true" cache="false" enabled="true">
+    <Table name="fact_delivery2branch">
+    </Table>
+    <DimensionUsage source="Branch" name="Branch" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Department" name="Department" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Branch Group" name="Branch Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Distribution Group" name="Distribution Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Region" name="Region" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Channel" name="Channel" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Goods Type" name="Goods Type" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Sub Goods Type" name="Sub GoodsType" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Year" name="Year" visible="true" foreignKey="date_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product" name="Product" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Type" name="Product Type" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Classification" name="Product Classification" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Sub Classification" name="Product Sub Classification" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Brand" name="Product Brand" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Mood" name="Mood" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Style" name="Style" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Color" name="Color" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Size" name="Size" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Serial" name="Serial" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Additional" name="Additional" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Tag" name="Tag" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Production Year" name="Production Year" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Unit Cost I" name="Unit Cost I" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Unit Cost II" name="Unit Cost II" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price" name="Retail Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price + VAT" name="Retail Price + VAT" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Selling Price" name="Selling Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Delivery QTY" column="delivery_qty" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Delivery Amount" column="delivery_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <CalculatedMember name="MTD Delivery QTY" formula="sum(mtd([Year].CurrentMember),[Measures].[Delivery QTY])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD Delivery QTY" formula="sum(ytd([Year].CurrentMember),[Measures].[Delivery QTY])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="MTD Delivery Amount" formula="sum(mtd([Year].CurrentMember),[Measures].[Delivery Amount])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD Delivery Amount" formula="sum(ytd([Year].CurrentMember),[Measures].[Delivery Amount])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="Delivery Price" formatString="#,###.##" formula="([Measures].[Delivery Amount])/([Measures].[Delivery QTY])" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+  <Cube name="Inventory" visible="true" cache="false" enabled="true">
+    <Table name="fact_inventory">
+    </Table>
+    <DimensionUsage source="Branch" name="Branch" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Department" name="Department" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Branch Group" name="Branch Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Distribution Group" name="Distribution Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Region" name="Region" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Channel" name="Channel" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Goods Type" name="Goods Type" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Sub Goods Type" name="Sub Goods Type" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product" name="Product" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Type" name="Product Type" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Classification" name="Product Classification" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Sub Classification" name="Product Sub Classification" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Brand" name="Product Brand" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Mood" name="Mood" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Style" name="Style" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Color" name="Color" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Size" name="Size" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Serial" name="Serial" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Additional" name="Additional" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Tag" name="Tag" visible="false" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Production Year" name="Production Year" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Source" name="Product Source" visible="true" foreignKey="product_source_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Unit Cost I" name="Unit Cost I" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Unit Cost II" name="Unit Cost II" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price" name="Retail Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price + VAT" name="Retail Price + VAT" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Selling Price" name="Selling Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <Dimension type="StandardDimension" visible="true" foreignKey="year" name="Year">
+      <Hierarchy visible="true" hasAll="true" primaryKey="year">
+        <Table name="fact_inventory" alias="">
+        </Table>
+        <Level name="year" visible="true" column="year" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="month_no" name="Month">
+      <Hierarchy visible="true" hasAll="true" primaryKey="month_no">
+        <Table name="fact_inventory" alias="">
+        </Table>
+        <Level name="month Name" visible="true" column="month_name" ordinalColumn="month_no" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Inventory Qty" column="inventory_qty" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Inventory Amount" column="inventory_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="In Transit Qty" column="in_transit_qty" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="In Transit Amount" column="in_transit_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="Warehouse Receive" visible="true" cache="true" enabled="true">
+    <Table name="fact_warehouse_receive">
+    </Table>
+    <DimensionUsage source="Product" name="Product" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Type" name="Product Type" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Classification" name="Product Classification" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Brand" name="Product Brand" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Mood" name="Mood" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Style" name="Style" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Color" name="Color" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Size" name="Size" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Serial" name="Serial" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Additional" name="Additional" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Tag" name="Tag" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Production Year" name="Production Year" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Year" name="Year" visible="true" foreignKey="date_key" highCardinality="false">
+    </DimensionUsage>
+    <Dimension type="StandardDimension" visible="true" foreignKey="product_grade" highCardinality="false" name="Product Grade">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="fact_warehouse_receive">
+        </Table>
+        <Level name="Product Grade" visible="true" column="product_grade" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <DimensionUsage source="Product Source" name="Product Source" visible="true" foreignKey="product_source_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Unit Cost I" name="Unit Cost I" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price" name="Retail Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price + VAT" name="Retail Price + VAT" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Selling Price" name="Selling Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Receive Amount" column="receive_amount" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Receive Qty" column="receive_qty" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <CalculatedMember name="MTD Receive Amount" formula="sum(mtd([Year].CurrentMember),[Measures].[Receive Amount])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD Receive Amount" formula="sum(ytd([Year].CurrentMember),[Measures].[Receive Amount])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="MTD Receive Qty" formula="sum(mtd([Year].CurrentMember),[Measures].[Receive Qty])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="YTD Receive Qty" formula="sum(ytd([Year].CurrentMember),[Measures].[Receive Qty])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="Receive Price" formatString="#,###.##" formula="([Measures].[Receive Amount])/([Measures].[Receive Qty])" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+  <Cube name="Inventory Daily" visible="true" cache="true" enabled="true">
+    <Table name="fact_inventory_daily">
+    </Table>
+    <DimensionUsage source="Branch" name="Branch" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Department" name="Department" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Branch Group" name="Branch Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Distribution Group" name="Distribution Group" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Region" name="Region" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Channel" name="Channel" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Goods Type" name="Goods Type" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Sub Goods Type" name="Sub Goods Type" visible="true" foreignKey="branch_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product" name="Product" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Type" name="Product Type" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Classification" name="Product Classification" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Sub Classification" name="Product Sub Classification" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Brand" name="Product Brand" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Mood" name="Mood" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Style" name="Style" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Color" name="Color" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Size" name="Size" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Serial" name="Serial" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Additional" name="Additional" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Tag" name="Tag" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Production Year" name="Production Year" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Product Source" name="Product Source" visible="true" foreignKey="product_source_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Unit Cost I" name="Unit Cost I" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Unit Cost II" name="Unit Cost II" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price" name="Retail Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Retail Price + VAT" name="Retail Price + VAT" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Selling Price" name="Selling Price" visible="true" foreignKey="product_key" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Year" name="Year" visible="true" foreignKey="date_key" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Inventory Qty" column="inventory_qty" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Inventory Amount" column="inventory_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="In Transit Qty" column="in_transit_qty" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="In Transit Amount" column="in_transit_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Sales Qty" column="sales_qty" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Gross Sales Amount" column="gross_sales_amount" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <CalculatedMember name="% Stock Qty VS Sales Qty" formatString="Percent" formula="([Measures].[Inventory Qty])/([Measures].[Sales Qty])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="% Stock Amount VS Gross Sales Amount" formatString="Percent" formula="([Measures].[Inventory Amount])/([Measures].[Gross Sales Amount])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="Inventory Price" formatString="#,###.##" formula="([Measures].[Inventory Amount])/([Measures].[Inventory QTY])" dimension="Measures" visible="true">
+    </CalculatedMember>
+    <CalculatedMember name="In Transit Price" formatString="#,###.##" formula="([Measures].[In Transit Amount])/([Measures].[In Transit QTY])" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+  <Role name="DW">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales VS Target" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales Delivery to Branch" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Inventory" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Warehouse Receive" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  <Role name="DF">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales VS Target" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales Delivery to Branch" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Inventory" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Warehouse Receive" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  <Role name="DM">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales VS Target" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales Delivery to Branch" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Inventory" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Warehouse Receive" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  <Role name="Manangement">
+    <SchemaGrant access="all">
+    </SchemaGrant>
+  </Role>
+  <Role name="DAW">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales VS Target" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales Delivery to Branch" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Inventory" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Warehouse Receive" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAW]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  <Role name="DAF">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales VS Target" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales Delivery to Branch" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Inventory" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Warehouse Receive" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAF]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  <Role name="DAM">
+    <SchemaGrant access="none">
+      <CubeGrant cube="Sales" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales VS Target" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Sales Delivery to Branch" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Inventory" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+      <CubeGrant cube="Warehouse Receive" access="all">
+        <HierarchyGrant hierarchy="[Product Brand]" access="custom">
+          <MemberGrant member="[Product Brand].[DAM]" access="all">
+          </MemberGrant>
+        </HierarchyGrant>
+      </CubeGrant>
+    </SchemaGrant>
+  </Role>
+  <Role name="Administrator">
+    <SchemaGrant access="all">
+    </SchemaGrant>
+  </Role>
+</Schema>
