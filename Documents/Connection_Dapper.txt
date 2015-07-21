@@ -1,0 +1,46 @@
+TeamViewer
+	ID: 611209657
+	Password: 123456
+
+BI Server
+	Host: 192.168.0.191
+	Port: 8081
+	User: admin
+	Password: password
+
+Database
+DWH
+	Database Type: MySQL
+	Host: 192.168.0.191
+	Database Name: dp_dwh
+	User: root
+	Password: password
+	Port: 3306
+
+Staging(สำหรับนำเข้าข้อมูลจาก Magic)
+	Database Type: MySQL
+	Host: 192.168.0.191
+	Database Name: dp_staging
+	User: root
+	Password: password
+	Port: 3306
+
+ETL
+	Database Type: MySQL
+	Host: 192.168.0.191
+	Database Name: dp_etl
+	User: root
+	Password: password
+	Port: 3306
+
+	Repository: dp_project
+	User: admin
+	Password: admin
+
+Magic *หากติดปัญหาเรื่องการ Connect ให้ติดต่อคุณสุทัศน์
+	Connection Type: Gerneric database
+	Access: Native(JDBC)
+	Custom Connection URL: jdbc:pervasive://192.168.0.3/PENTAHO
+	Customer Driver Class Name: com.pervasive.jdbc.v2.Driver
+	User, Password: ไม่ต้องระบุค่ะ
+	
